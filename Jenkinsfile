@@ -14,7 +14,7 @@ pipeline{
                 script{
                     withSonarQubeEnv(credentialsId: 'SonarToken') {
                             sh 'chmod +x gradlew'       //set execute permission
-                            sh './gradlew sonarqube'    //helps push code to sonarqube and validate code against the sonar rules
+                            sh './gradlew sonarqube --debug'    //helps push code to sonarqube and validate code against the sonar rules
                     }
 
                     timeout(time: 1, unit: 'HOURS') {
